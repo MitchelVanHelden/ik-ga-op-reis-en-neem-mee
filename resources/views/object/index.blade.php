@@ -5,11 +5,11 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Categoriën</div>
+                <div class="card-header">Voorwerpen</div>
                 <div class="card-body">
                     <ul>
-                       @foreach($categories as $cat) 
-                       <li><a href="#">{{ $cat -> name }}</a></li>
+                       @foreach($object as $obj) 
+                       <li><a href="#">{{ $obj -> name }}</a></li>
                        @endforeach
                    </ul>
                </div>
