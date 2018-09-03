@@ -8,8 +8,8 @@
                 <div class="card-header">Categoriën</div>
                 <div class="card-body">
                     <ul>
-                       @foreach($categories as $cat) 
-                       <li><a href="#">{{ $cat -> name }}</a></li>
+                       @foreach ($categories as $cat)
+                       <li><a href="{{ action('CategoryController@ShowObjects', $cat->id) }}">{{ $cat->name }}</a></li>
                        @endforeach
                    </ul>
                </div>

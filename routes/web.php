@@ -21,6 +21,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // categories
 Route::get('/categories', 'CategoryController@index');
+Route::get('categories/{id}/objects', 'CategoryController@ShowObjects');
 
 // objects
 Route::get('/objects', 'ObjectController@index');
