@@ -13,7 +13,7 @@
                         <ul>
 
                             @foreach($categories->objects as $object)
-                                <li><a href="#">{{ $object->name }}</a></li>
+                                <li><a href="{{ action('ObjectController@view', $object->id) }}">{{ $object->name }}</a></li>
                             @endforeach
                             
                         </ul>
