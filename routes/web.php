@@ -25,4 +25,9 @@ Route::get('categories/{id}/objects', 'CategoryController@ShowObjects');
 
 // objects
 Route::get('/objects', 'ObjectController@index');
-Route::get('categories/{id}/details', 'ObjectController@view');
+Route::get('objects/{id}/details', 'ObjectController@view');
+
+// koffer
+Route::get('objects/{id}', 'suitcaseController@getobject');
+Route::get('/addobject', 'suitcaseController@addobject');
+Route::get('suitcase', 'suitcaseController@getsuitcase');

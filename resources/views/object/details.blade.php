@@ -12,6 +12,7 @@
 					<ul>
 					gewicht: {{ $object->weight }}KG
                    </ul>
+                   <a class="btn btn-dark" href="{{ action('suitcaseController@getobject', $object->id) }}">in de koffer doen</a>
                </div>
            </div>
        </div>
