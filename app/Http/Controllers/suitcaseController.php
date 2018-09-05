@@ -25,5 +25,4 @@ class suitcaseController extends Controller
     public function addobject(){
         return redirect('objects');
     }
-
 }

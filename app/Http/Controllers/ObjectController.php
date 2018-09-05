@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\objects;
 use App\Categories;
+use App\suitcase;
 
 class ObjectController extends Controller
 {

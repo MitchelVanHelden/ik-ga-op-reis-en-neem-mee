@@ -4,34 +4,38 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\objects;
+use App\StoredItems;
 use session;
 
 class suitcase extends Model
 {
 	const suitcase = 'suitcase';
 	public $session;
-	public $storeItems = [];
-	public $totalQty = 0;
-	public $totalweight = 0;
-
+	public $storedItems = [];
 
 	public function __construct($session){
 		$this->session = session();
 		if (!empty($session)) {
-			$this->storeItems = $this->session->get(self::suitcase);
+			$this->storedItems = $this->session->get(self::suitcase);
 		}
 	}
+
 	    public function add($objectsid) {
-        $objects = objects::findOrFail($objectsid);
+        $object = objects::findOrFail($objectsid);
         $qty = 0;
-        $qty++;   
-        if ($objects != NULL) {
-            $storeItems = new StoreItems($objects, $qty);
-            $this->storeItems = session()->push('suitcase', $storeItems);
-            } 
+        $qty++;
+        if ($object != NULL) {
+            $storedItems = new StoredItems($object, $qty);
+            $this->storedItems = session()->push('suitcase', $storedItems);
+        } 
     }
+    	public function delete($id){
+
+
+    	}
 
 	public function getItems() {
-		return $this->storeItems;
+		return $this->storedItems;
+
 	}
 }

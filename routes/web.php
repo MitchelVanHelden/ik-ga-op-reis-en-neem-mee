@@ -31,3 +31,4 @@ Route::get('objects/{id}/details', 'ObjectController@view');
 Route::get('objects/{id}', 'suitcaseController@getobject');
 Route::get('/addobject', 'suitcaseController@addobject');
 Route::get('suitcase', 'suitcaseController@getsuitcase');
+Route::post('suitcase', 'suitcaseController@getsuitcase');

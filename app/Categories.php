@@ -4,11 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+	class Categories extends Model
 
-class Categories extends Model
-
-{
-	public function objects(){
+	{
+		public function objects(){
 		return $this->belongsToMany('App\objects');
 	}
 }
