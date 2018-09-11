@@ -7,20 +7,22 @@
             <div class="card">
                 <div class="card-header">Koffer</div>
 
-                <div class="card-body">
+                <div class="card-body" >
                     @if(count($items) > 0)
                     @foreach($items as $c)
-                    <div style="margin-bottom: 20px;">
-                            <a href="{{ action('ObjectController@view', $c->objectsId->id) }}">{{ $c->objectsId->name }}</a>
-                            <p> Aantal: {{ $c->qty}} </p>
-                            <p> {{ $c->objectsId->weight }} KG </p>
-                        </div>
-                        @endforeach
-                        <p>totaal gewicht: {{ $c->objectsId->weight }} KG</p>
-                        @endif
+                    <div style="margin-bottom: 20px; border-bottom: 2px solid black" >
+                        <a href="{{ action('ObjectController@view', $c->objectsId->id) }}">{{ $c->objectsId->name }}</a>
+                        <p> Aantal: {{ $c->qty}} </p>
+                        <p> {{ $c->objectsId->weight }} KG </p>
+
+                        <a href="#">verwijderen</a>
                     </div>
+                    @endforeach
+                    <p>totaal gewicht: {{ $c->objectsId->weight }} KG</p>
+                    @endif
                 </div>
             </div>
         </div>
     </div>
-    @endsection
+</div>
+@endsection

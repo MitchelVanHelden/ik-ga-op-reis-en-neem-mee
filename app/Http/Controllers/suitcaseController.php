@@ -9,6 +9,7 @@ use App\Categories;
 use App\objects;
 
 
+
 class suitcaseController extends Controller
 {
     public function getobject(Request $request, $id){    	
@@ -24,5 +25,11 @@ class suitcaseController extends Controller
     }
     public function addobject(){
         return redirect('objects');
+    }
+    public function TotalWeight(Request $request){
+    	$suitcase = new suitcase($request->session());
+    	echo $suitcase->TotalWeight();
+
+
     }
 }

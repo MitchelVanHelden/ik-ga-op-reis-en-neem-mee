@@ -11,8 +11,10 @@ class storedItems extends model
 	public $qty = 0;
 
 
+
 	public function __construct($objectsId, $qty) {
 		$this->objectsId = $objectsId;
 		$this->qty = $qty;
+
 	}
 }

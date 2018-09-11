@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\objects;
 use App\Categories;
 use App\suitcase;
+use session;
 
 class ObjectController extends Controller
 {
