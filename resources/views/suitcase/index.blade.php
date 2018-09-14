@@ -16,12 +16,12 @@
                         <p> {{ $c->objectsId->weight }} KG </p>
 
                         <a href="#">verwijderen</a>
-                    </div>
+                    </div> 
 
                     @endforeach
+                   <p>Totaal gewicht: {{$weight}} kg</p>
                     @endif
-                    @foreach($weight as $weight)
-                    @endforeach
+
                 </div>
             </div>
         </div>

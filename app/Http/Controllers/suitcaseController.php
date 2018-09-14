@@ -21,7 +21,9 @@ class suitcaseController extends Controller
     public function getsuitcase(Request $request){
         $suitcase = new suitcase($request->session());
         $items = $suitcase->getItems();
-        return view('suitcase.index', compact('items'));
+        $weight = $suitcase->TotalWeight();
+         return view('suitcase.index', compact('items', 'weight'));
+s        
     }
     public function addobject(){
         return redirect('objects');
@@ -29,11 +31,7 @@ class suitcaseController extends Controller
     public function TotalWeight(Request $request){
     	$suitcase = new suitcase($request->session());
         $weight = $suitcase->TotalWeight();
-
     	//echo $suitcase->TotalWeight();
-
-        
-
 
     }
 }
