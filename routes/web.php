@@ -33,4 +33,5 @@ Route::get('/addobject', 'suitcaseController@addobject');
 Route::get('suitcase', 'suitcaseController@getsuitcase');
 Route::post('suitcase', 'suitcaseController@getsuitcase');
 
+//Route::get('suitcase', 'suitcaseController@TotalWeight');
 Route::get('weight', 'suitcaseController@TotalWeight');

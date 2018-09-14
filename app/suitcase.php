@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\objects;
-use App\storedItems;
+use App\StoredItems;
 use session;
 
 class suitcase extends Model
@@ -26,8 +26,8 @@ class suitcase extends Model
 		$qty = 0;
 		$qty++;
 		if ($object != NULL) {
-			$storedItems = new storedItems($object, $qty);
-			$this->storedItems = session()->push('suitcase', $storedItems);
+			$storedItem = new storedItems($object, $qty);
+			$this->storedItems = session()->push('suitcase', $storedItem);
 		} 
 	}
 
@@ -35,14 +35,21 @@ class suitcase extends Model
 		return $this->storedItems;
 
 	}
+
 	public function TotalWeight(){
-		
+
 		$weight = 0;
-
-		foreach ($suitcase as $name => $weight) {
-			echo($weight);
+			
+		foreach ($this->storedItems as $storedItem) {
+		$object = objects::findOrFail($storedItem->objectsId);
+		$itemId = $storedItem->objectsId;
+		$qty = 0;
+		$qty = $storedItem->qty;
+		$itemId = $itemId->weight;
+		$weight = $weight + $itemId;
+		
 		}
-
+		
 		return $weight;
 	}
 }

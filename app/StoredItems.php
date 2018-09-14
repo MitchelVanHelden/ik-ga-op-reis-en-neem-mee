@@ -1,9 +1,10 @@
 <?php
 
 namespace App;
-use App\suitcase;
+
 
 use Illuminate\Database\Eloquent\Model;
+use App\suitcase;
 
 class storedItems extends model
 {

@@ -28,7 +28,11 @@ class suitcaseController extends Controller
     }
     public function TotalWeight(Request $request){
     	$suitcase = new suitcase($request->session());
-    	echo $suitcase->TotalWeight();
+        $weight = $suitcase->TotalWeight();
+
+    	//echo $suitcase->TotalWeight();
+
+        
 
 
     }
