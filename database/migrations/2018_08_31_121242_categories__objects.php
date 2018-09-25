@@ -13,7 +13,7 @@ class CategoriesObjects extends Migration
      */
     public function up()
     {
-            Schema::create('categories_objects', function (Blueprint $table) {
+        Schema::create('categories_objects', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('categories_id');
             $table->unsignedInteger('objects_id');

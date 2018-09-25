@@ -22,8 +22,8 @@ class suitcaseController extends Controller
         $suitcase = new suitcase($request->session());
         $items = $suitcase->getItems();
         $weight = $suitcase->TotalWeight();
-         return view('suitcase.index', compact('items', 'weight'));
-s        
+        return view('suitcase.index', compact('items', 'weight'));
+       
     }
     public function addobject(){
         return redirect('objects');
@@ -32,6 +32,11 @@ s
     	$suitcase = new suitcase($request->session());
         $weight = $suitcase->TotalWeight();
     	//echo $suitcase->TotalWeight();
+    }
+    public function delete(Request $request){
+        $suitcase = new suitcase($request->session());
+        $delete = $suitcase->delete();      
+   
 
     }
 }

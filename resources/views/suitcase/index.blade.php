@@ -15,7 +15,7 @@
                         <p> Aantal: {{ $c->qty}} </p>
                         <p> {{ $c->objectsId->weight }} KG </p>
 
-                        <a href="#">verwijderen</a>
+                        <a class="delete" href="{{ action('suitcaseController@delete')}}">verwijderen</a> 
                     </div> 
 
                     @endforeach

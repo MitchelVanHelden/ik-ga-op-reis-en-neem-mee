@@ -24,7 +24,14 @@ class suitcase extends Model
 	public function add($objectsId) {
 		$object = objects::findOrFail($objectsId);
 		$qty = 0;
-		$qty++;
+		$qty++;		
+		// als id al in koffer zit aantal + 1 en gewicht * 2
+		// kijken of id al in de koffer zit
+		if ($object == $object){
+		// zo ja gewicht * 2 en aantal + 1 	
+
+
+		}
 		if ($object != NULL) {
 			$storedItem = new storedItems($object, $qty);
 			$this->storedItems = session()->push('suitcase', $storedItem);
@@ -37,19 +44,36 @@ class suitcase extends Model
 	}
 
 	public function TotalWeight(){
-
 		$weight = 0;
 			
 		foreach ($this->storedItems as $storedItem) {
-		$object = objects::findOrFail($storedItem->objectsId);
-		$itemId = $storedItem->objectsId;
-		$qty = 0;
-		$qty = $storedItem->qty;
-		$itemId = $itemId->weight;
-		$weight = $weight + $itemId;
+			//dd($storedItem);
+			//$itemId = $storedItem->objectsId;
+			//$qty = 0;
+			//$qty = $storedItem->qty;
+			//$itemId = $itemId->weight;
+			//  item ophalen 
+			$itemWeight = $storedItem->objectsId->weight;
+			//  gewicht van item ophalen
+			//$itemWeight = $itemId->weight;
+			// de hoeveelheid van een item ophalen
+			$qty = $storedItem->qty;
+			// hoeveelheid items x gewicht
+			$subWeight = $qty * $itemWeight;
+			// totaal gewicht van alle items bij elkaar optellen
+			$weight = $subWeight + $weight;
 		
 		}
 		
 		return $weight;
+	}
+	public function delete(){
+		
+		
+		$itemId = $storedItem->objectsId;
+
+		unset ($itemId);
+		
+	
 	}
 }

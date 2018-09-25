@@ -11,7 +11,7 @@ class CreateObjectsTable extends Migration
      *
      * @return void
      */
-    public function up()
+  public function up()
     {
         Schema::create('objects', function (Blueprint $table) {
             $table->increments('id');
@@ -19,7 +19,7 @@ class CreateObjectsTable extends Migration
             $table->integer('weight');
             $table->timestamps();
         });
-    }
+   }
 
     /**
      * Reverse the migrations.
